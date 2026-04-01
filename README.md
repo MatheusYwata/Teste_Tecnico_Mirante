@@ -117,6 +117,18 @@ Esse comportamento foi considerado na modelagem dos testes, garantindo maior fid
 
 ---
 
+## Integração contínua
+
+A execução em pipeline (CI) foi considerada, porém a funcionalidade de busca via interface apresenta comportamento dinâmico e dependente de animações, o que pode gerar instabilidade em ambientes headless.
+
+Durante a automação, foram identificados comportamentos flaky, especialmente na interação com o componente de busca.
+
+Para garantir confiabilidade e consistência dos testes, optou-se por manter a execução em ambiente local.
+
+A integração com CI pode ser implementada futuramente com melhorias na estratégia de sincronização e tratamento de elementos dinâmicos da interface ou optando por realizar o teste diretamente via URL com query parameter.
+
+---
+
 ##  Possíveis melhorias
 
 * Implementação de Page Object Model
@@ -127,6 +139,4 @@ Esse comportamento foi considerado na modelagem dos testes, garantindo maior fid
 
 ---
 
-##  Autor
 
-Matheus Hiroshi De Oliveira Ywata
