@@ -35,19 +35,27 @@ digita termo de busca inválido
     Wait Until Element Is Visible    //input[@id='search-field']   timeout=10s
     Input Text    //input[@id='search-field']    asdasdasd123
 
-Pressionar Enter
+pressionar Enter
     Press Keys    css:input[type="search"]    ENTER
 
-o sistema deve exibir os resultados
+o sistema exibe os resultados
     Wait Until Page Contains Element    css:article
 
 
-o sistema deve exibir mensagem sem resultados
+o sistema exibe a mensagem padrão para resultados não encontrados
     Wait Until Page Contains    ${NO_RESULTS}   timeout=10s
 
 deixa o campo de busca vazio
     Click Element    //input[@id='search-field']
     Clear Element Text    //input[@id='search-field']
 
-o sistema deve exibir página de resutados vazia
+o sistema exibe página de resultados vazia
      Wait Until Page Contains    Resultados encontrados para:
+
+digita termo de busca com caracteres especiais
+    Wait Until Element Is Visible    //input[@id='search-field']   timeout=10s
+    Input Text    //input[@id='search-field']    @#$%^&*
+
+digita termo de busca com espaço vazio
+    Wait Until Element Is Visible    //input[@id='search-field']   timeout=10s
+    Input Text    //input[@id='search-field']    "   "
